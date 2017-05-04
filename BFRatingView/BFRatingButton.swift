@@ -8,45 +8,35 @@
 
 import UIKit
 
-enum BFRatingButtonType:Int {
-    case NORMAL = 0
-    case LIKE
-    case DISLIKE
-}
-
 
 class BFRatingButton:UIButton {
     
-    @IBInspectable var index:Int = 0
-    var ratingType:BFRatingButtonType = .NORMAL {
-        didSet {
-            switch self.ratingType {
-            case .NORMAL:
-                self.backgroundColor = UIColor.white
-            case .LIKE:
-                self.backgroundColor = UIColor.red
-            case .DISLIKE:
-                self.backgroundColor = UIColor.lightGray
-            }
+    @IBInspectable
+    var index:Int = 0
+    
+    var highlitedColor: UIColor?
+    
+    @IBInspectable var selectedBackgroundColor:UIColor {
+        set {
+            self.highlitedColor = newValue
+            self.setBackgroundImage(BFRatingButton.imageFrom(newValue), for: .highlighted)
+        }
+        get {
+            return self.highlitedColor!
         }
     }
+
     
-    init(frame: CGRect, index: Int, type:BFRatingButtonType) {
-        var adjustFrame = frame
-        if adjustFrame.size.height < 40 {
-            adjustFrame.size.height = 40
-        }
-        super.init(frame: adjustFrame)
+    init(frame: CGRect, index: Int) {
+        super.init(frame: frame)
         self.index = index
-        self.ratingType = type
-        
+
         self.setupUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -55,10 +45,30 @@ class BFRatingButton:UIButton {
     
     
     func setupUI() -> Void {
+        self.clipsToBounds = true
         self.layer.borderColor = UIColor.gray.cgColor
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = self.frame.size.height / 2
+    }
+
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        setupUI()
+    }
+    
+    
+    static func imageFrom(_ color:UIColor) -> UIImage? {
         
+        UIGraphicsBeginImageContext(CGSize(width: 1, height: 1))
+        
+        let context = UIGraphicsGetCurrentContext();
+        context!.setFillColor(color.cgColor)
+        context!.fill(CGRect(x: 0, y: 0, width: 1, height: 1))
+        let colorImage = UIGraphicsGetImageFromCurrentImageContext()
+        
+        UIGraphicsEndImageContext()
+        
+        return colorImage;
     }
     
 }

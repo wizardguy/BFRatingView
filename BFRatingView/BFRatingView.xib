@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -25,7 +25,7 @@
                                 <constraint firstAttribute="width" constant="140" id="XyF-JK-aV2"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHt-5J-MeK">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHt-5J-MeK">
                             <rect key="frame" x="5" y="160" width="240" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="l4e-VG-G4A"/>
@@ -40,21 +40,37 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRT-ic-Zfi" customClass="BFRatingButton" customModule="BFRatingViewDemo" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRT-ic-Zfi" customClass="BFRatingButton" customModule="BFRatingViewDemo" customModuleProvider="target">
                             <rect key="frame" x="30" y="267" width="190" height="40"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="ZkA-05-uvc"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                    <integer key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="button1Clicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="WaE-8r-i0a"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoC-0G-Ijs" customClass="BFRatingButton" customModule="BFRatingViewDemo" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoC-0G-Ijs" customClass="BFRatingButton" customModule="BFRatingViewDemo" customModuleProvider="target">
                             <rect key="frame" x="30" y="322" width="190" height="40"/>
                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="40" id="wcK-Nl-3xr"/>
                             </constraints>
                             <state key="normal" title="Button"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="index">
+                                    <integer key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="button2Clicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="Sa2-CX-e7x"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2t-tY-tQJ">
                             <rect key="frame" x="226" y="0.0" width="24" height="24"/>
@@ -63,6 +79,9 @@
                                 <constraint firstAttribute="width" constant="24" id="ab7-Zl-nqp"/>
                             </constraints>
                             <state key="normal" title="X"/>
+                            <connections>
+                                <action selector="closedbuttonClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="VO8-53-mCu"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -89,7 +108,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="Qjv-Dy-Arb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="C2x-Z7-46b"/>
                 <constraint firstItem="Qjv-Dy-Arb" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="c50-T7-kgf"/>
@@ -97,6 +116,7 @@
             <connections>
                 <outlet property="button1" destination="yRT-ic-Zfi" id="iac-6O-6KZ"/>
                 <outlet property="button2" destination="ZoC-0G-Ijs" id="cfs-14-azD"/>
+                <outlet property="buttonClose" destination="K2t-tY-tQJ" id="tHE-PX-dkR"/>
                 <outlet property="containerView" destination="Qjv-Dy-Arb" id="V8Y-ds-68L"/>
                 <outlet property="imageView" destination="C1A-bd-Gh8" id="vv2-Tj-QbL"/>
                 <outlet property="subTitle" destination="eVp-qm-tNN" id="gfD-2b-vTr"/>
