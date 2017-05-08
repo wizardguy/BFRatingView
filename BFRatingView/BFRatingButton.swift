@@ -50,11 +50,6 @@ class BFRatingButton:UIButton {
         self.layer.borderWidth = 1.0
         self.layer.cornerRadius = self.frame.size.height / 2
     }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        setupUI()
-    }
     
     
     static func imageFrom(_ color:UIColor) -> UIImage? {

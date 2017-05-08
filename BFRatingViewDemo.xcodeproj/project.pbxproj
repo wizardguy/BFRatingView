@@ -15,6 +15,7 @@
 		952563481EBB3EAB004771D7 /* BFRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952563471EBB3EAB004771D7 /* BFRatingView.swift */; };
 		9525634A1EBB3F07004771D7 /* BFRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 952563491EBB3F07004771D7 /* BFRatingView.xib */; };
 		9525634C1EBB43E2004771D7 /* BFRatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9525634B1EBB43E2004771D7 /* BFRatingButton.swift */; };
+		957DB5361EC0188A00B913D1 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 957DB5351EC0188A00B913D1 /* Media.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		952563471EBB3EAB004771D7 /* BFRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFRatingView.swift; sourceTree = "<group>"; };
 		952563491EBB3F07004771D7 /* BFRatingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BFRatingView.xib; sourceTree = "<group>"; };
 		9525634B1EBB43E2004771D7 /* BFRatingButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BFRatingButton.swift; sourceTree = "<group>"; };
+		957DB5351EC0188A00B913D1 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				952563471EBB3EAB004771D7 /* BFRatingView.swift */,
 				952563491EBB3F07004771D7 /* BFRatingView.xib */,
 				9525634B1EBB43E2004771D7 /* BFRatingButton.swift */,
+				957DB5351EC0188A00B913D1 /* Media.xcassets */,
 			);
 			path = BFRatingView;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				9525633E1EBB3E5B004771D7 /* LaunchScreen.storyboard in Resources */,
 				9525634A1EBB3F07004771D7 /* BFRatingView.xib in Resources */,
+				957DB5361EC0188A00B913D1 /* Media.xcassets in Resources */,
 				9525633B1EBB3E5B004771D7 /* Assets.xcassets in Resources */,
 				952563391EBB3E5B004771D7 /* Main.storyboard in Resources */,
 			);

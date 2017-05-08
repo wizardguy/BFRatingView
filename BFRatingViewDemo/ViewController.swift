@@ -26,13 +26,13 @@ class ViewController: UIViewController, BFRatingViewDelegate {
         
         
         // Way2: Using init method
-        let button2 = BFRatingButton(frame: CGRect(x:100, y:100, width:200, height:60), index: 1)
-        button2.backgroundColor = UIColor.green
-        button2.selectedBackgroundColor = UIColor.blue
-        button2.setTitle("Button2", for: .normal)
-        button2.setTitleColor(UIColor.black, for: .normal)
-        button2.setTitleColor(UIColor.white, for: .highlighted)
-        self.view.addSubview(button2)
+//        let button2 = BFRatingButton(frame: CGRect(x:100, y:100, width:200, height:60), index: 1)
+//        button2.backgroundColor = UIColor.green
+//        button2.selectedBackgroundColor = UIColor.blue
+//        button2.setTitle("Button2", for: .normal)
+//        button2.setTitleColor(UIColor.black, for: .normal)
+//        button2.setTitleColor(UIColor.white, for: .highlighted)
+//        self.view.addSubview(button2)
         
     }
 
@@ -44,33 +44,51 @@ class ViewController: UIViewController, BFRatingViewDelegate {
     
     // ============ Demo2: BFRatingView ============
     func openRating() {
-        let view = BFRatingView.loadFromNib()
-        view?.frame = CGRect(x: 0, y:0, width:self.view.bounds.width, height: self.view.bounds.height)
-        view?.delegate = self
-        view?.title.text = "BFRatingView Demo"
-        view?.subTitle.text = "Here is the Demo SubTitle."
         
-        view?.button1.setTitle("Like Me!", for: .normal)
-        view?.button1.setTitleColor(UIColor.black, for: .normal)
-        view?.button1.setTitleColor(UIColor.white, for: .highlighted)
-        view?.button1.selectedBackgroundColor = UIColor.red
-        view?.button1.backgroundColor = UIColor.orange
+        // Way 1
+//        let view = BFRatingView.loadFromNib()
+//        view?.frame = CGRect(x: 0, y:0, width:self.view.bounds.width, height: self.view.bounds.height)
+//        view?.delegate = self
+//        view?.title.text = "BFRatingView Demo"
+//        
+//        view?.button.setTitle("Like Me!", for: .normal)
+//        view?.button.setTitleColor(UIColor.black, for: .normal)
+//        view?.button.setTitleColor(UIColor.white, for: .highlighted)
+//        view?.button.selectedBackgroundColor = UIColor.red
+//        view?.button.backgroundColor = UIColor.orange
+//        
+//        self.view.addSubview(view!)
         
-        
-        view?.button2.setTitle("No", for: .normal)
-        view?.button2.setTitleColor(UIColor.black, for: .normal)
-        view?.button2.setTitleColor(UIColor.white, for: .highlighted)
-        view?.button2.selectedBackgroundColor = UIColor.gray
-        view?.button2.backgroundColor = UIColor.white
-        self.view.addSubview(view!)
+        // Way 2
+        let view = BFRatingView.ratingView(title: "Rating!", button: "Like Me!", image: "rate", in: self.view, delegate: self, identity: "DemoRatingView")
+        view?.check()
     }
     
-    func ratingViewDidClosed() {
-        print("Rating View Closed!")
+    func ratingViewShouldDisplay(_ view: BFRatingView) -> Bool {
+        switch view.viewID {
+        case "DemoRatingView":
+            return true
+        default:
+            return false
+        }
     }
     
-    func ratingView(_ view: BFRatingView, didSelectButtonAt index: Int) {
-        print("button clicked at \(index)")
+    func ratingViewDidClosed(_ view: BFRatingView) {
+        switch view.viewID {
+        case "DemoRatingView":
+            print("Rating View Closed!")
+        default:
+            print("unknow rating view")
+        }
+    }
+    
+    func ratingViewDidSelectButton(_ view: BFRatingView) {
+        switch view.viewID {
+        case "DemoRatingView":
+            print("button clicked!")
+        default:
+            print("unknow rating view")
+        }
     }
 
 }
